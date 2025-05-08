@@ -23,16 +23,45 @@
     background-color: #111;
   }
 
-  main {
+  /* Center layout horizontally and allow vertical scroll */
+body {
     margin: 0;
-    height: 100vh; /* Full viewport height */
+    padding: 2rem 0;
     display: flex;
-    justify-content: center; /* Horizontal centering */
-    align-items: center;     /* Vertical centering */
+    justify-content: center;
+    min-height: 100vh;
+    overflow-y: auto;
+    font-family: sans-serif;
+    background-color: #fafafa;
   }
   
+  /* Stack the featured and grid sections */
+  main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+  
+  /* Shared article style */
   article {
-    padding: 2rem;
+    padding: 1rem;
     background-color: #f0f0f0;
     border-radius: 8px;
+    width: 250px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    text-align: center;
+  }
+  
+  /* Featured article (bigger and more distinct) */
+  .featured {
+    width: 550px;
+    background-color: #dff0ff;
+  }
+  
+  /* 2x2 grid layout for the 4 articles */
+  .article-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
   }
